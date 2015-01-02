@@ -5,6 +5,10 @@
 
 <h1>Your Pragmatic Catalog</h1>
 
+<% if session[:counter] > 5 %>
+  <h3>You already accessed <%= pluralize(session[:counter], "time") %> this page!</h3><br />
+<% end %>
+
 <% cache ['store', Product.latest] do %>
   <% @products.each do |product| %>
     <% cache ['entry', product] do %>
@@ -14,8 +18,12 @@
         <%= sanitize(product.description) %>
         <div class="price_line">
           <span class="price"><%= number_to_currency(product.price) %></span>
+          <%= button_to 'Add to Cart', line_items_path(product_id: product) %>
         </div>
       </div>
     <% end %>
   <% end %>
 <% end %>
+
+
+
