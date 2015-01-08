@@ -32,8 +32,13 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'unicorn'
 
 # Use Capistrano for deployment
-gem 'capistrano-rails', group: :development
+#gem 'capistrano',  '~> 2.1'
+#gem 'capistrano-rails', '~> 1.1', group: :development
+gem 'capistrano',  '~> 2.15.5'
 gem 'rvm-capistrano', group: :development
+
+
+#gem 'rvm-capistrano', group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
@@ -42,5 +47,7 @@ gem 'rvm-capistrano', group: :development
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 group :production do
-	gem 'mysql2'
+#	gem 'mysql2'
 end
+
+#The `deploy:restart` hook for passenger applications is now in a separate gem called capistrano-passenger.  Just add it to your Gemfile and require it in your Capfile.
