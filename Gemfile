@@ -47,7 +47,7 @@ gem 'rvm-capistrano', group: :development
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 group :production do
-#	gem 'mysql2'
+	gem 'mysql2'
 end
 
 #The `deploy:restart` hook for passenger applications is now in a separate gem called capistrano-passenger.  Just add it to your Gemfile and require it in your Capfile.
