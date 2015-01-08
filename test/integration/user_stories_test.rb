@@ -64,5 +64,13 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
   end
 
 
+  test "sensitive data should requires login" do
+    delete '/logout'
+    get '/admin'
+    assert_redirected_to %r(/login)
+  end
+
+
+
 
 end
